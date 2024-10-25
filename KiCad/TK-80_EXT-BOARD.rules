@@ -1,0 +1,124 @@
+
+(rules PCB TK-80_EXT-BOARD
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (eu.mihosoft.freerouting.autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 2533)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.8)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.5)
+    )
+  )
+  (rule
+    (width 200.0)
+    (clear 200.2)
+    (clear 100.0 (type smd_to_turn_gap))
+    (clear 50.0 (type smd_smd))
+  )
+  (padstack "Via[0-1]_500:300_um"
+    (shape
+      (circle F.Cu 500.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 500.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_500:300_um" "Via[0-1]_500:300_um" default
+  )
+  (via 
+    "Via[0-1]_500:300_um-kicad_default" "Via[0-1]_500:300_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_500:300_um-+5V" "Via[0-1]_500:300_um" +5V
+  )
+  (via 
+    "Via[0-1]_500:300_um-GND" "Via[0-1]_500:300_um" GND
+  )
+  (via_rule
+    default "Via[0-1]_500:300_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_500:300_um-kicad_default"
+  )
+  (via_rule
+    +5V "Via[0-1]_500:300_um-+5V"
+  )
+  (via_rule
+    GND "Via[0-1]_500:300_um-GND"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    /D0 /D1 /D2 /D3 /D4 /D5 /D6 /D7
+    /SCK /MISO /MOSI /CS /PA0 /PB7 /PA1 /PB6
+    /PA2 /PB5 /PA3 /PB4 /PB3 /PA4 /PB2 /PA5
+    /PB1 /PA6 /PB0 /PA7 /PC1 /A1 /A0 /PC7
+    /PC6 /PC5 /PC4 /PC0 /RESET /PC2 /~WR /PC3
+    /A10 /HLDA /CLOCK1 /READY /WAIT /A2 +12V /A3
+    /A4 "-5V" /A5 /A6 /HOLD /A7 /INT /A8
+    /CLOCK2 /A9 /INTE /A15 /DBIN /A12 /A13 /SYNC
+    /A14 /A11 /~STSTB /DC0 "/C_HLDA" /DB1 "/C_WR" /DC1
+    "/C_DBIN" /DB5 /DB4 /DC5 /DC4 /DB6 /DB7 /DC6
+    /DC7 /~BUSEN /DB3 /~INTA /DC3 /~MEMR /DB2 /~IOR
+    /DC2 /~MEMW /DB0 /~IOW "Net-(U5-Pad20)" "Net-(U5-Pad21)" "Net-(U5-Pad22)" "/D_~RD"
+    "/D_~CS" "/D_D7" "/D_A1" "/D_D6" "/D_A0" "/D_D5" "/D_D4" "/D_D3"
+    "/D_D2" "/D_D1" "/D_D0" "/D_RESET" "/D_~WR" "Net-(S1-Pad2)" "Net-(S2-Pad2)" "Net-(S3-Pad2)"
+    "Net-(U10-Pad3)"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class +5V
+    +5V
+    (clearance_class +5V)
+    (via_rule +5V)
+    (rule
+      (width 400.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class GND
+    GND
+    (clearance_class GND)
+    (via_rule GND)
+    (rule
+      (width 400.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)

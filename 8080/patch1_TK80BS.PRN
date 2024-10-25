@@ -1,0 +1,27 @@
+			  Z80 ASSEMBLER - ZASM VER 1.6
+  0300                	JP1		EQU		0300H		;TK-80 SDSAVE
+  0303                	JP2:	EQU		0303H		;TK-80 SDLOAD
+                      	
+                      	;********************** TK-80 MONITOR 修正 *********************
+  003C                			ORG		003CH
+  003C  F0            			DB		0F0H		;TK-80初期化ルーチンではPORTCを0FFhに初期化しているので0F0hに変更
+                      			
+  0052                			ORG		0052H
+  0052  F0            			DB		0F0H		;TK-80初期化ルーチンではPORTCを0FFhに初期化しているので0F0hに変更
+                      			
+                      	
+  0080                			ORG		0080H
+  0080  0003          			DW		JP1			;TK-80 CMTSAVEジャンプテーブル
+  0082  0303          			DW		JP2			;TK-80 CMTLOADジャンプテーブル
+                      	
+  024B                			ORG		024BH
+  024B  E0            			DB		0E0H		;TK-80キーボードスキャン1 PORTCを0EFh -> 0E0
+                      	
+  0258                			ORG		0258H
+  0258  D0            			DB		0D0H		;TK-80キーボードスキャン2 PORTCを0DFh -> 0D0
+                      	
+  0265                			ORG		0265H
+  0265  B0            			DB		0B0H		;TK-80キーボードスキャン3 PORTCを0BFh -> 0B0
+                      				
+  0266                			END
+

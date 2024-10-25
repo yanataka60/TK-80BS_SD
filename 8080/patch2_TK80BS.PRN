@@ -1,0 +1,37 @@
+			  Z80 ASSEMBLER - ZASM VER 1.6
+  0306                	JP3:	EQU		0306H		;TK-80BS BASIC LEVEL2 SDファイル名一覧
+  0309                	JP4:	EQU		0309H		;TK-80BS BASIC LEVEL2 SDLOAD
+  030C                	JP5:	EQU		030CH		;TK-80BS BASIC LEVEL2 SDSAVE
+  030F                	JP6:	EQU		030FH		;TK-80BS MONITOR SDファイル名一覧
+  0312                	JP7:	EQU		0312H		;TK-80BS MONITOR SDSAVE
+  0315                	JP8:	EQU		0315H		;TK-80BS MONITOR SDSAVE
+                      	
+                      	;***************** TK-80BS ジャンプテーブル修正 ***********************
+  E2C6                			ORG		0E2C6H
+  E2C6  46494C4553    			DB		'FILES'		;BASIC LOADH -> FILES
+                      	
+  E42C                			ORG		0E42CH
+  E42C  0603          			DW		JP3			;BASIC LOADH -> FILES
+                      	
+  E42E                			ORG		0E42EH
+  E42E  0903          			DW		JP4			;BASIC LOAD
+                      	
+  E430                			ORG		0E430H
+  E430  0603          			DW		JP3			;BASIC SAVEH -> FILES
+                      	
+  E432                			ORG		0E432H
+  E432  0C03          			DW		JP5			;BASIC SAVE
+                      	
+  F1F7                			ORG		0F1F7H
+  F1F7  5344          			DB		'SD'		;BS MONITOR CTコマンドをDIRコマンド(SD)に変更
+  F1FB                			ORG		0F1FBH
+  F1FB  0F03          			DW		JP6
+                      	
+  F21F                			ORG		0F21FH
+  F21F  1203          			DW		JP7			;BS MONITOR STコマンドをフック
+                      	
+  F225                			ORG		0F225H
+  F225  1503          			DW		JP8			;BS MONITOR LTコマンドをフック
+                      				
+  F227                			END
+

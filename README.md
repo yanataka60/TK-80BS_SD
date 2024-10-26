@@ -1,16 +1,12 @@
-# NEC TK-80にSD-Cardとのロード、セーブ機能
+# NEC TK-80BSにSD-Cardとのロード、セーブ機能
 
-![TK-80_SD](https://github.com/yanataka60/TK-80_SD/blob/main/JPEG/TITLE.jpg)
+![TK-80BS_SD](https://github.com/yanataka60/TK-80BS_SD/blob/main/JPEG/title.jpg)
 
-　ARDUINO+SD-CARDをTK-80に接続することでNEC TK-80でSD-CARDとロード、セーブを実現するものです。
+　ARDUINO+SD-CARDをTK-80BSに接続することでNEC TK-80BSでSD-CARDとロード、セーブを実現するものです。
 
-　実現するためにTK-80 MONITOR へのパッチ当て、SDアクセスルーチンを合わせてROMに焼く必要があります。
+　実現するためにTK-80BS MONITOR、BS MONITOR及びLEVEL2 BASUCへのパッチ当て、SDアクセスルーチンを合わせてROMに焼く必要があります。
 
-　拡張基板はTK-80BSと共用のEXT-BOARDを使います。
-
-　ROMは27512、27256、2764、2732のどれでも使えるので安く入手できるものを使ってください。
-
-　パッチを当てたTK-80 MONITOR及びSDアクセスルーチンを含めて焼きます。元のROM D454(D464)×3個はすべて引き抜きます。
+　パッチを当てたROMを使うのでTK-80のROM D454(D464)×3個、TK-80BSのBS MONITOR、LEVEL2BASICはすべて引き抜きます。
 
 　RAMは、8000h～81FFhの増設RAMを増設していない場合はSRAM 62256が使えますが、2101(5101)×4個と62256×1個のどちらか安い方を選択してください。
 

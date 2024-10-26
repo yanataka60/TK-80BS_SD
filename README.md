@@ -110,7 +110,7 @@ MicroSD Card Adapterについているピンヘッダを除去してハンダ付
 注)Arduinoを基板に直付けしている場合、Arduinoプログラムを書き込むときは、EXT-BOARDをTK-80本体から外し、GAL22V10を外したうえで書き込んでください。
 
 ## GAL22V10への書込み
-　WINCUPLファルダに四通りのプログラムがあります。増設RAMの状況によりjedファイルを選択してROMライター(TL866II Plus等)を使ってGAL22V10に書き込んでください。
+　WINCUPLファルダに二通りのプログラムがあります。増設RAMの状況によりjedファイルを選択してROMライター(TL866II Plus等)を使ってGAL22V10に書き込んでください。
 
 　(1)TK-80本体の増設RAM(8000h-81FFh)及びTK-80BSの増設RAM(9800h-9FFFh)を増設済みの場合
 

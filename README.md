@@ -2,17 +2,15 @@
 
 ![TK-80BS_SD](https://github.com/yanataka60/TK-80BS_SD/blob/main/JPEG/title.jpg)
 
-　ARDUINO+SD-CARDをTK-80BSに接続することでNEC TK-80BSでSD-CARDとロード、セーブを実現するものです。
+　ARDUINO+SD-CARDをTK-80BSに接続することでNEC TK-80BS LEVEL2 BASICでSD-CARDとロード、セーブを実現するものです。(LEVEL1 BASICは未所有のため対応していません。)
 
 　実現するためにTK-80BS MONITOR、BS MONITOR及びLEVEL2 BASUCへのパッチ当て、SDアクセスルーチンを合わせてROMに焼く必要があります。
 
-　パッチを当てたROMを使うのでTK-80のROM D454(D464)×3個、TK-80BSのBS MONITOR、LEVEL2BASICはすべて引き抜きます。
+　パッチを当てたROMを使うのでTK-80のROM D454(D464)×3個、TK-80BSのBS MONITOR 2個、LEVEL2BASIC 1個はすべて引き抜きます。
 
-　RAMはSRAM 62256を使用し、増設RAMの有無にかかわらずRAMがフル増設された状態となります。
+　RAMはEXT-BOARD上のSRAM 62256により、増設RAMの有無にかかわらずRAMがフル増設された状態になります。
 
 　TK-80標準装備のRAM D5101-E×4個(8200h～83FFh)は7SegLEDをDMA表示する為に必要ですので引き抜いてはいけません。(SRAM 62256では代わりになりません。)
-
-　TK-80_SDとしてはROMのうち0000h～0977hまでを使います。未使用領域は自由に使って構いません。
 
 ## 回路図
 　KiCadフォルダ内のTK-80_EXT-BOARD.pdfを参照してください。
@@ -32,7 +30,8 @@
 |U3|8228|1|TK-80から引き抜いたもの|
 |U8|8255|1|TK-80から引き抜いたもの|
 |U5|GAL22V10|1||
-|U6|ROM|1|27512|
+|U6|ROM 27512|1||
+|U7|SRAM 62256|1||
 |U10|Arduino_Pro_Mini_5V|1|Atmega328版を使用 168版は不可。|
 |U2、U4、U9|Pin Header|40Pin×4、14Pin×2|秋月電子通商 細ピンヘッダーPHA-1x40SG又は基板用リードフレームBQ04-SN(注3)|
 |C1-C3|積層セラミックコンデンサ 0.1uF|3||
@@ -129,7 +128,7 @@ MicroSD Card Adapterについているピンヘッダを除去してハンダ付
 
 ## 操作方法
 
-### TK-80として使う場合
+### TK-80
 #### Save
 　4桁のファイルNo(xxxx)をデータ表示部のLEDに入力してSTORE DATAを押します。
 
@@ -161,3 +160,5 @@ MicroSD Card Adapterについているピンヘッダを除去してハンダ付
 
 　パソコンのクロスアセンブラ等でTK-80用の実行binファイルを作成したらバイナリエディタ等で先頭に開始アドレス、終了アドレスの4Byteを付加し、ファイル名を変更したものをSD-Cardのルートディレクトリに保存すればTK-80から呼び出せるようになります。
 
+### TK-80BS MONITOR
+### TK-80BS LEVEL2 BASIC

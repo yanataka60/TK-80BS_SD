@@ -293,6 +293,14 @@ BASICプログラムから機械語プログラムを呼び出して動くアプ
 
 例えば「TESTBAS.CAS」と「TESTBIN.CAS」をまとめる場合にはテキストエディタで「TESTBAS.CAS」の後ろに「TESTBIN.CAS」をコピーし別名で保存します。例として「TESTBASBIN.CAS」とします。
 
+![TESTBAS](https://github.com/yanataka60/TK-80BS_SD/blob/main/JPEG/TESTBAS.jpg)
+![TESTBIN](https://github.com/yanataka60/TK-80BS_SD/blob/main/JPEG/TESTBIN.jpg)
+
+![TESTBASBIN](https://github.com/yanataka60/TK-80BS_SD/blob/main/JPEG/TESTBASBIN.jpg)
+
 このファイルは「LOAD TESTBASBIN[復改]」としてBASICプログラムをLOADし、次に「LOAD[復改]」とすることで機械語プログラムが読み込まれるCASファイルとなります。
 
 また、「TESTBAS.CAS」の最終行を削除してから「TESTBIN.CAS」をコピーし別名で保存すれば、「LOAD TESTBASBIN[復改]」でBASICプログラムと機械語プログラムをまとめてLOADすることも可能です。
+
+![TESTBASBIN2](https://github.com/yanataka60/TK-80BS_SD/blob/main/JPEG/TESTBASBIN2.jpg)
+

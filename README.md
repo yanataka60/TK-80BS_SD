@@ -8,7 +8,9 @@
 
 　パッチを当てたROMを使うのでTK-80のROM D454(D464)×3個、TK-80BSのBS MONITOR 2個、LEVEL2BASIC 1個はすべて引き抜きます。
 
-　RAMはEXT-BOARD上のSRAM 62256により、増設RAMの有無にかかわらずRAMがフル増設された状態になります。
+　RAMはEXT-BOARD上のSRAM 62256により、9800h～9FFFh以外の増設RAMを増設した状態に出来ます。
+
+　9800h～9FFFhのRAMはTK-80BSボード上で増設してください。
 
 　TK-80標準装備のRAM D5101-E×4個(8200h～83FFh)は7SegLEDをDMA表示する為に必要ですので引き抜いてはいけません。(SRAM 62256では代わりになりません。)
 
@@ -114,17 +116,9 @@ MicroSD Card Adapterについているピンヘッダを除去してハンダ付
 
 　TK80BS_1(ROM 0000-7BFF D000-FFFF,RAM A000-CFFF)フォルダのTK80.jed
 
-　(2)TK-80本体の増設RAM(8000h-81FFh)は増設済み、TK-80BSの増設RAM(9800h-9FFFh)は未装着の場合
+　(2)TK-80本体の増設RAM(8000h-81FFh)は未装着、TK-80BSの増設RAM(9800h-9FFFh)は増設済みの場合
 
-　TK80BS_2(ROM 0000-7BFF D000-FFFF,RAM 9800-CFFF)フォルダのTK80.jed
-
-　(3)TK-80本体の増設RAM(8000h-81FFh)は未装着、TK-80BSの増設RAM(9800h-9FFFh)は増設済みの場合
-
-　TK80BS_3(ROM 0000-7BFF D000-FFFF,RAM 8000-81FF A000-CFFF)フォルダのTK80.jed
-
-　(4)TK-80本体の増設RAM(8000h-81FFh)は未装着、TK-80BSの増設RAM(9800h-9FFFh)も未装着の場合
-
-　TK80BS_4(ROM 0000-7BFF D000-FFFF,RAM 8000-81FF 9800-CFFF)フォルダのTK80.jed
+　TK80BS_2(ROM 0000-7BFF D000-FFFF,RAM 8000-81FF A000-CFFF)フォルダのTK80.jed
 
 ## SD-CARD
 　出来れば8GB以下のSDカードを用意してください。

@@ -1,0 +1,47 @@
+NAME		TK80BS;
+PARTNO		22V10;
+REVISION	A;
+DATE		24/6/8;
+DESIGNER	None;
+COMPANY       None;
+ASSEMBLY	None;
+LOCATION	None;
+DEVICE		G22V10;
+                                                    
+
+/* INPUTS... */
+Pin   1 = A12;
+Pin   2 = A13;
+Pin   3 = A14;
+Pin   4 = A15;
+Pin   5 = MEMR;
+Pin   6 = MEMW;
+Pin   7 = A8;
+Pin   8 = A9;
+Pin   9 = A10;
+Pin  10 = A11;
+Pin  11 = RSTIN;
+
+/* OUTPUTS... */
+Pin 22 = RAMCE;
+Pin 21 = RAMW;
+Pin 20 = ROMR;
+Pin 19 = RSTOUT;
+
+/** Logic **/
+SEL3 = !(A15) & A14 & A13 & A12 & A11 & A10;
+SEL13 = A15 & A14 & !(A13) & A12;
+SEL14 = A15 & A14 & A13 & !(A12);
+SEL15 = A15 & A14 & A13 & A12;
+ROMR = !(!(A15 # SEL3 # MEMR) # ((SEL13 # SEL14 # SEL15) & !(MEMR)));
+
+SEL1 = A15 & !(A14) & A13;
+SEL2 = A15 & A14 & !(A13) & !(A12);
+SEL4 = A15 & !(A14) & !(A13) & !(A12) & !(A11) & !(A10);
+SEL5 = !(A9) & !(A8);
+SEL6 = !(A9) & A8;
+
+RAMCE = !(SEL1 # SEL2 # (SEL4 & SEL5) # (SEL4 & SEL6)) # (MEMR & MEMW);
+RAMW = !(SEL1 # SEL2 # (SEL4 & SEL5) # (SEL4 & SEL6)) # MEMW;
+
+RSTOUT = !(RSTIN);

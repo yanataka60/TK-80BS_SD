@@ -8,7 +8,7 @@
 
 　パッチを当てたROMを使うのでTK-80のROM D454(D464)×3個、TK-80BSのBS MONITOR 2個、LEVEL2BASIC 1個はすべて引き抜きます。
 
-　RAMはEXT-BOARD上のSRAM 62256により、9800h～9FFFh以外の増設RAMを増設した状態に出来ます。
+　EXT-BOARD上のSRAM 62256により、A000h～CFFFhまでのRAMが増設されます。また、GAL22V10へ書き込むプログラムを選択することで8000h～81FFhのRAMを増設することも可能です。
 
 　9800h～9FFFhのRAMはTK-80BSボード上で増設してください。
 

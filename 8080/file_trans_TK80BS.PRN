@@ -382,23 +382,22 @@
                       	
                       	;WORKエリアを識別
                       	;8391H～83FFHはLOADをSKIP
-  04A9  E5            	JOGAI:	PUSH	HL
-  04AA  D5            			PUSH	DE
-  04AB  EB            			EX		DE,HL
-  04AC                	JOGAI_TK:
-  04AC  216F7C        			LD		HL,MIN
-  04AF  19            			ADD		HL,DE
-  04B0  D2BA04        			JP		NC,JGOK    ;MIN未満ならOK
-  04B3  21007C        			LD		HL,MAX
-  04B6  19            			ADD		HL,DE
-  04B7  D2BE04        			JP		NC,JGERR   ;MAX未満ならSKIP
-  04BA  AF            	JGOK:	XOR		A          ;OKならAレジスタ=0
-  04BB  C3C304        			JP		JGRTN
-  04BE  3E01          	JGERR:	LD		A,01H      ;SKIP範囲ならAレジスタ=1
-  04C0  C3C304        			JP		JGRTN
-  04C3  D1            	JGRTN:	POP		DE
-  04C4  E1            			POP		HL
-  04C5  C9            			RET
+  04A9  E5            	JOGAI:		PUSH	HL
+  04AA  D5            				PUSH	DE
+  04AB  EB            				EX		DE,HL
+  04AC  216F7C        	JOGAI_TK:	LD		HL,MIN
+  04AF  19            				ADD		HL,DE
+  04B0  D2BA04        				JP		NC,JGOK    ;MIN未満ならOK
+  04B3  21007C        				LD		HL,MAX
+  04B6  19            				ADD		HL,DE
+  04B7  D2BE04        				JP		NC,JGERR   ;MAX未満ならSKIP
+  04BA  AF            	JGOK:		XOR		A          ;OKならAレジスタ=0
+  04BB  C3C304        				JP		JGRTN
+  04BE  3E01          	JGERR:		LD		A,01H      ;SKIP範囲ならAレジスタ=1
+  04C0  C3C304        				JP		JGRTN
+  04C3  D1            	JGRTN:		POP		DE
+  04C4  E1            				POP		HL
+  04C5  C9            				RET
                       	
                       	;8255初期化
   04C6                	INIT:
@@ -961,19 +960,19 @@
   08B0  F5            			PUSH	AF
   08B1  FEF0          			CP		0F0H
   08B3  C2BC08        			JP		NZ,ERR3
-  08B6  213709        			LD		HL,MSG_F0			;SD-CARD INITIALIZE ERROR
+  08B6  213909        			LD		HL,MSG_F0			;SD-CARD INITIALIZE ERROR
   08B9  C3D808        			JP		ERRMSG
   08BC  FEF1          	ERR3:	CP		0F1H
   08BE  C2C708        			JP		NZ,ERR4
-  08C1  215209        			LD		HL,MSG_F1			;NOT FIND FILE
+  08C1  215409        			LD		HL,MSG_F1			;NOT FIND FILE
   08C4  C3D808        			JP		ERRMSG
   08C7  FEF3          	ERR4:	CP		0F3H
   08C9  C2D208        			JP		NZ,ERR99
-  08CC  216209        			LD		HL,MSG_F3			;FILE EXIST
+  08CC  216409        			LD		HL,MSG_F3			;FILE EXIST
   08CF  C3D808        			JP		ERRMSG
   08D2                	ERR99:
   08D2  CDA906        			CALL	HEX1PR
-  08D5  216F09        			LD		HL,MSG99			;その他ERROR
+  08D5  217109        			LD		HL,MSG99			;その他ERROR
   08D8  CDCA06        	ERRMSG:	CALL	STRPRT
   08DB  F1            			POP		AF
   08DC  C9            			RET
@@ -987,20 +986,19 @@
   0909                	MSG4:
   0909  42494E41525920			DB		'BINARY LOAD END',0DH,0AH,00H
   091B                	MSG_KEY1:
-  091B  53454C3A302D39			DB		'SEL:0-9 NXT:ANY BCK:B BRK:!'
-  0936  00            			DB		00H
+  091B  53454C3A302D39			DB		'SEL:0-9 NXT:ANY BCK:B BRK:!',0DH,0AH,00H
                       	
-  0937                	MSG_F0:
-  0937  53442D43415244			DB		'SD-CARD INITIALIZE ERROR',0DH,0AH,00H
+  0939                	MSG_F0:
+  0939  53442D43415244			DB		'SD-CARD INITIALIZE ERROR',0DH,0AH,00H
                       			
-  0952                	MSG_F1:
-  0952  4E4F542046494E			DB		'NOT FIND FILE',0DH,0AH,00H
+  0954                	MSG_F1:
+  0954  4E4F542046494E			DB		'NOT FIND FILE',0DH,0AH,00H
                       			
-  0962                	MSG_F3:
-  0962  46494C45204558			DB		'FILE EXIST',0DH,0AH,00H
+  0964                	MSG_F3:
+  0964  46494C45204558			DB		'FILE EXIST',0DH,0AH,00H
                       		
-  096F                	MSG99:
-  096F  204552524F520D			DB		' ERROR',0DH,0AH,00H
+  0971                	MSG99:
+  0971  204552524F520D			DB		' ERROR',0DH,0AH,00H
                       				
-  0978                			END
+  097A                			END
 

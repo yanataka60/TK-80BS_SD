@@ -104,6 +104,10 @@ MicroSD Card Adapterについているピンヘッダを除去してハンダ付
 
 　ROMに焼き、EXT-BOARDに装着します。
 
+　ROMは27512を使うのでS1、S2、S3のショートピンは、全て左側を選択します。
+
+![27512](https://github.com/yanataka60/TK-80BS_SD/blob/main/JPEG/ROM27512.JPG)
+
 ## Arduinoへの書込み
 　Arduino IDEを使ってArduinoフォルダTK-80_SDフォルダ内TK-80_SD.inoを書き込みます。
 

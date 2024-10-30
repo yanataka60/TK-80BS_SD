@@ -34,12 +34,12 @@
 |U5|GAL22V10|1||
 |U6|ROM 27512|1||
 |U7|SRAM 62256|1||
-|U10|Arduino_Pro_Mini_5V|1|Atmega328版を使用 168版は不可。|
-|U2、U4、U9|Pin Header|40Pin×4、14Pin×2|秋月電子通商 細ピンヘッダーPHA-1x40SG又は基板用リードフレームBQ04-SN(注3)|
+|U10|Arduino_Pro_Mini_5V|1|Atmega328版を使用 168版は不可。(注3)|
+|U2、U4、U9|Pin Header|40Pin×4、14Pin×2|秋月電子通商 細ピンヘッダーPHA-1x40SG又は基板用リードフレームBQ04-SN(注4)|
 |C1-C3|積層セラミックコンデンサ 0.1uF|3||
 |S1-S3|ピンヘッダ3Pin|3|秋月電子通商 ピンヘッダーPH-1x40SGなど|
-|LS1|小型スピーカー|1|秋月電子通商 マイクロスピーカーなど|
-||ピンソケット(任意)|26Pin分|Arduino_Pro_Miniを取り外し可能としたい場合に調達します 秋月電子通商 FHU-1x42SGなど|
+|LS1|小型スピーカー|1|秋月電子通商 マイクロスピーカー又は圧電スピーカーPT08-Z185Rなど|
+||ピンソケット(任意)|24Pin分|Arduino_Pro_Miniを取り外し可能としたい場合に調達します 秋月電子通商 FHU-1x42SGなど|
 
 　　　注1)秋月電子通商　AE-microSD-LLCNVのJ1ジャンパはショートしてください。
 
@@ -51,9 +51,11 @@ MicroSD Card Adapterについているピンヘッダを除去してハンダ付
 
 ハンダ付けに自信のない方はJ1の秋月電子通商　AE-microSD-LLCNVをお使いください。AE-microSD-LLCNVならパワーLED、アクセスLEDが付いています。
 
-![MicroSD Card Adapter1]https://github.com/yanataka60/TK-80BS_SD/blob/main/JPEG/MicroSD%20Card%20Adapter.jpg)
+![MicroSD Card Adapter1](https://github.com/yanataka60/TK-80BS_SD/blob/main/JPEG/MicroSD%20Card%20Adapter.jpg)
 
-　　　注3)細ピンヘッダーと基板用リードフレームの選択
+　　　注3)TK-80BS_SDではArduino Pro MiniのA4、A5ピンは使用しません。
+
+　　　注4)細ピンヘッダーと基板用リードフレームの選択
 ![Pin](https://github.com/yanataka60/TK-80BS_SD/blob/main/JPEG/PIN.jpg)
 
 どちらでも大丈夫ですが、あえて言うなら

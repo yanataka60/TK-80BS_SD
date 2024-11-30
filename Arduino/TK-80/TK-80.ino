@@ -1,3 +1,5 @@
+// 2024.11.30 INPUT_PULLUPに修正
+//
 #include "SdFat.h"
 #include <SPI.h>
 SdFat SD;
@@ -30,8 +32,8 @@ void setup()
 // CS=pin10
 // pin10 output
   pinMode(10,OUTPUT);
-  pinMode( 6,INPUT);  //受信データ
-  pinMode( 7,INPUT);  //CHK
+  pinMode( 6,INPUT_PULLUP);  //受信データ
+  pinMode( 7,INPUT_PULLUP);  //CHK
   pinMode( 8,OUTPUT); //送信データ
   pinMode( 9,OUTPUT); //FLG
   digitalWrite(8,LOW);
@@ -652,7 +654,9 @@ void dirlist(void){
       }
     }
 //処理終了指示
+//////不要でした。機会があれば8080プログラム側のCALL RCVBYTEと合わせて削除します。
     snd1byte(0xFF);
+//////
     snd1byte(0x00);
   }else{
     snd1byte(0xf1);
